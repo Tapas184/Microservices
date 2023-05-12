@@ -23,9 +23,9 @@ public class TicketBooking {
 	            	    @HystrixProperty(name="circuitBreaker.enabled", value="true")
 	            }
 	                )
-	public String booking() {
+	public String booking() throws IllegalAccessException {
 		if(new Random().nextInt(10)<5)
-			throw new RuntimeException("Problem in b.method");
+			throw new IllegalAccessException("Error in Booking try after some time");
 		System.out.println("TicketBooking.booking()");
 		return "Booking method execute";
 	}
