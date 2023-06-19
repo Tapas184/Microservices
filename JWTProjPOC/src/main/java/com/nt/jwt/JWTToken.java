@@ -16,7 +16,7 @@ public class JWTToken {
 				   .setSubject(sub)
 				   .setIssuer("Tapas")
 				   .setIssuedAt(new Date(System.currentTimeMillis()))
-				   .setExpiration(new Date(System.currentTimeMillis()+TimeUnit.MINUTES.toMillis(1)))
+				   .setExpiration(new Date(System.currentTimeMillis()+TimeUnit.MINUTES.toMillis(2)))
 				   .signWith(SignatureAlgorithm.HS256, Base64.getEncoder().encode(skey.getBytes()))
 				   .compact();
 	}
